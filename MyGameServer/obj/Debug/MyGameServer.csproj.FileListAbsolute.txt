@@ -1,0 +1,14 @@
+C:\Users\cyn\Desktop\ServerProject\bin\MyGameServer.dll
+C:\Users\cyn\Desktop\ServerProject\bin\MyGameServer.pdb
+C:\Users\cyn\Desktop\ServerProject\MyGameServer\MyGameServer\obj\Debug\MyGameServer.csproj.AssemblyReference.cache
+C:\Users\cyn\Desktop\ServerProject\MyGameServer\MyGameServer\obj\Debug\MyGameServer.csproj.CoreCompileInputs.cache
+C:\Users\cyn\Desktop\ServerProject\MyGameServer\MyGameServer\obj\Debug\MyGameServer.csproj.CopyComplete
+C:\Users\cyn\Desktop\ServerProject\MyGameServer\MyGameServer\obj\Debug\MyGameServer.dll
+C:\Users\cyn\Desktop\ServerProject\MyGameServer\MyGameServer\obj\Debug\MyGameServer.pdb
+C:\Users\cyn\Desktop\ServerProject\bin\log4net.config
+C:\Users\cyn\Desktop\ServerProject\bin\hibernate.cfg.xml
+C:\Users\cyn\Desktop\ServerProject\MyGameServerS10\MyGameServer\obj\Debug\MyGameServer.csproj.AssemblyReference.cache
+C:\Users\cyn\Desktop\ServerProject\MyGameServerS10\MyGameServer\obj\Debug\MyGameServer.csproj.CoreCompileInputs.cache
+C:\Users\cyn\Desktop\ServerProject\MyGameServerS10\MyGameServer\obj\Debug\MyGameServer.dll
+C:\Users\cyn\Desktop\ServerProject\MyGameServerS10\MyGameServer\obj\Debug\MyGameServer.pdb
+C:\Users\cyn\Desktop\ServerProject\MyGameServerS10\MyGameServer\obj\Debug\MyGameServer.csproj.CopyComplete

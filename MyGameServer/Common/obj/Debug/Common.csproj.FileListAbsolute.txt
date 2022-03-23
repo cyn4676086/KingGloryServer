@@ -1,0 +1,14 @@
+C:\Users\cyn\Desktop\Unity Projects\PhotonClient\Assets\Plugins\Common.dll
+C:\Users\cyn\Desktop\Unity Projects\PhotonClient\Assets\Plugins\Common.pdb
+C:\Users\cyn\Desktop\ServerProject\MyGameServer\MyGameServer\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\cyn\Desktop\ServerProject\MyGameServer\MyGameServer\Common\obj\Debug\Common.dll
+C:\Users\cyn\Desktop\ServerProject\MyGameServer\MyGameServer\Common\obj\Debug\Common.pdb
+C:\Users\cyn\Desktop\Unity Projects\KingGloryUI\Assets\Plugins\Common.dll
+C:\Users\cyn\Desktop\Unity Projects\KingGloryUI\Assets\Plugins\Common.pdb
+C:\Users\cyn\Desktop\ServerProject\MyGameServer\MyGameServer\Common\obj\Debug\Common.csproj.AssemblyReference.cache
+C:\Users\cyn\Desktop\Unity Projects\KingGloryV2\Assets\Plugins\Common.dll
+C:\Users\cyn\Desktop\Unity Projects\KingGloryV2\Assets\Plugins\Common.pdb
+C:\Users\cyn\Desktop\ServerProject\MyGameServerS10\MyGameServer\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\cyn\Desktop\ServerProject\MyGameServerS10\MyGameServer\Common\obj\Debug\Common.dll
+C:\Users\cyn\Desktop\ServerProject\MyGameServerS10\MyGameServer\Common\obj\Debug\Common.pdb
+C:\Users\cyn\Desktop\ServerProject\MyGameServerS10\MyGameServer\Common\obj\Debug\Common.csproj.AssemblyReference.cache
