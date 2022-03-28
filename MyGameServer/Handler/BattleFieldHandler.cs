@@ -1,11 +1,10 @@
-﻿using Common;
-using Photon.SocketServer;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Photon.SocketServer;
+using Common;
 namespace MyGameServer.Handler
 {
     class BattleFieldHandler : BaseHandler
@@ -20,7 +19,6 @@ namespace MyGameServer.Handler
             ParaCode code = (ParaCode)DicTool.GetValue<byte, object>(operationRequest.Parameters, (byte)ParaCode.ParaType);
             if (code == ParaCode.BF_Join)
             {
-                MyGameServer.log.Info("收到Battle请求");
                 //加入的时候，发送PlayerIndex给对方。根据当前的玩家数量
                 //返回序号
                 OperationResponse response = new OperationResponse(operationRequest.OperationCode);
@@ -34,7 +32,6 @@ namespace MyGameServer.Handler
                 response.ReturnCode = (short)Common.ReturnCode.Success;
                 response.Parameters = data2;
                 peer.SendOperationResponse(response, sendParameters);
-                MyGameServer.log.Info("返回Battle");
 
 
                 //广播到所有的客户端，有新玩家加入
@@ -51,7 +48,6 @@ namespace MyGameServer.Handler
                 //注意，这里2个参数
                 data3.Add((byte)ParaCode.ParaType, ParaCode.BF_Join);
                 data3.Add((byte)ParaCode.BF_Join, allplayer);
-                MyGameServer.log.Info(data3);
                 ed.Parameters = data3;
 
 
@@ -76,7 +72,6 @@ namespace MyGameServer.Handler
                 {
                     peerItem.SendEvent(ed, new SendParameters());
                 }
-                //MyGameServer.log.Info("转发到所有客户端move"+p);
             }
             else if (code == ParaCode.BF_Att)
             {
@@ -110,6 +105,22 @@ namespace MyGameServer.Handler
                     peerItem.SendEvent(ed, new SendParameters());
                 }
             }
+            else if (code == ParaCode.BF_Destory)
+            {
+                string p = (string)DicTool.GetValue<byte, object>(operationRequest.Parameters, (byte)ParaCode.BF_Destory);
+                //转发给所有客户端
+
+                EventData ed = new EventData((byte)operationRequest.OperationCode);
+                var data3 = new Dictionary<byte, object>();
+                //注意，这里2个参数
+                data3.Add((byte)ParaCode.ParaType, ParaCode.BF_Destory);
+                data3.Add((byte)ParaCode.BF_Destory, p);
+                ed.Parameters = data3;
+                foreach (var peerItem in GameModel.Instance.PeerList)
+                {
+                    peerItem.SendEvent(ed, new SendParameters());
+                }
+            }
             else if (code == ParaCode.BF_Ending)
             {
                 //参数是失败的人
@@ -127,6 +138,7 @@ namespace MyGameServer.Handler
                     peerItem.SendEvent(ed, new SendParameters());
                 }
             }
+
         }
     }
 }

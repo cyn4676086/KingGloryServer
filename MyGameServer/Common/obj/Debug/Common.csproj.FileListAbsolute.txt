@@ -12,9 +12,9 @@ C:\Users\cyn\Desktop\ServerProject\MyGameServerS10\MyGameServer\Common\obj\Debug
 C:\Users\cyn\Desktop\ServerProject\MyGameServerS10\MyGameServer\Common\obj\Debug\Common.dll
 C:\Users\cyn\Desktop\ServerProject\MyGameServerS10\MyGameServer\Common\obj\Debug\Common.pdb
 C:\Users\cyn\Desktop\ServerProject\MyGameServerS10\MyGameServer\Common\obj\Debug\Common.csproj.AssemblyReference.cache
-C:\Users\cyn\Desktop\ServerProject\MyGameServerV2\MyGameServer\Common\obj\Debug\Common.csproj.AssemblyReference.cache
 C:\Users\cyn\Desktop\ServerProject\MyGameServerV2\MyGameServer\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 C:\Users\cyn\Desktop\ServerProject\MyGameServerV2\MyGameServer\Common\obj\Debug\Common.dll
 C:\Users\cyn\Desktop\ServerProject\MyGameServerV2\MyGameServer\Common\obj\Debug\Common.pdb
 C:\Users\cyn\Desktop\Unity Projects\KingGlory012\Assets\Plugins\Common.dll
 C:\Users\cyn\Desktop\Unity Projects\KingGlory012\Assets\Plugins\Common.pdb
+C:\Users\cyn\Desktop\ServerProject\MyGameServerV2\MyGameServer\Common\obj\Debug\Common.csproj.AssemblyReference.cache
