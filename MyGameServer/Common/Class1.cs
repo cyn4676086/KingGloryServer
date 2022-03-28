@@ -17,5 +17,10 @@ namespace Common
     {
         Success,Failed,
     }
-    
+    public enum AttackType : short
+    {
+        Normal = 0,
+        Skill1 = 1
+    }
+
 }

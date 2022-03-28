@@ -12,3 +12,8 @@ C:\Users\cyn\Desktop\ServerProject\MyGameServerS10\MyGameServer\obj\Debug\MyGame
 C:\Users\cyn\Desktop\ServerProject\MyGameServerS10\MyGameServer\obj\Debug\MyGameServer.dll
 C:\Users\cyn\Desktop\ServerProject\MyGameServerS10\MyGameServer\obj\Debug\MyGameServer.pdb
 C:\Users\cyn\Desktop\ServerProject\MyGameServerS10\MyGameServer\obj\Debug\MyGameServer.csproj.CopyComplete
+C:\Users\cyn\Desktop\ServerProject\MyGameServerV2\MyGameServer\obj\Debug\MyGameServer.csproj.AssemblyReference.cache
+C:\Users\cyn\Desktop\ServerProject\MyGameServerV2\MyGameServer\obj\Debug\MyGameServer.csproj.CoreCompileInputs.cache
+C:\Users\cyn\Desktop\ServerProject\MyGameServerV2\MyGameServer\obj\Debug\MyGameServer.csproj.CopyComplete
+C:\Users\cyn\Desktop\ServerProject\MyGameServerV2\MyGameServer\obj\Debug\MyGameServer.dll
+C:\Users\cyn\Desktop\ServerProject\MyGameServerV2\MyGameServer\obj\Debug\MyGameServer.pdb

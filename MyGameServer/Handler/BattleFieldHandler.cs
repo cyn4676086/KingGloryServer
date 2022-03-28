@@ -76,7 +76,7 @@ namespace MyGameServer.Handler
                 {
                     peerItem.SendEvent(ed, new SendParameters());
                 }
-                MyGameServer.log.Info("转发到所有客户端move"+p);
+                //MyGameServer.log.Info("转发到所有客户端move"+p);
             }
             else if (code == ParaCode.BF_Att)
             {
