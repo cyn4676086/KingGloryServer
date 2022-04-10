@@ -28,6 +28,14 @@ namespace MyGameServer
             {
                 GameModel.Instance.MatchingList.Remove(this);
             }
+            foreach(var item in GameModel.Instance.RoomList)
+            {
+                if (this == item.first || this == item.second)
+                {
+                    GameModel.Instance.RoomList.Remove(item);
+                }
+            }
+            
         }
         //客户端发起请求的时候
         protected override void OnOperationRequest(OperationRequest operationRequest, SendParameters sendParameters)

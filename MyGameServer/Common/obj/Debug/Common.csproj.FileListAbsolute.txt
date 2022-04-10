@@ -17,4 +17,6 @@ C:\Users\cyn\Desktop\ServerProject\MyGameServerV2\MyGameServer\Common\obj\Debug\
 C:\Users\cyn\Desktop\ServerProject\MyGameServerV2\MyGameServer\Common\obj\Debug\Common.pdb
 C:\Users\cyn\Desktop\Unity Projects\KingGlory012\Assets\Plugins\Common.dll
 C:\Users\cyn\Desktop\Unity Projects\KingGlory012\Assets\Plugins\Common.pdb
+C:\Users\cyn\Desktop\Unity Projects\KingGloryV16\Assets\Plugins\Common.dll
+C:\Users\cyn\Desktop\Unity Projects\KingGloryV16\Assets\Plugins\Common.pdb
 C:\Users\cyn\Desktop\ServerProject\MyGameServerV2\MyGameServer\Common\obj\Debug\Common.csproj.AssemblyReference.cache

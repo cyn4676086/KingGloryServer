@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Common;
 using MyGameServer.Handler;
+using MyGameServer.Model;
 using Photon.SocketServer;
 
 
@@ -12,6 +13,9 @@ namespace MyGameServer.Handler
 {
     class MatchingHandler : BaseHandler
     {
+        
+        private BattleRoom room;
+
         public MatchingHandler()
         {
             OpCode = Common.OperationCode.Matching;
@@ -25,7 +29,6 @@ namespace MyGameServer.Handler
 
             if (code == ParaCode.Matching_Start)
             {
-
                 //没有参数，直接返回成功
                 OperationResponse response = new OperationResponse(operationRequest.OperationCode);
                 response.ReturnCode = (short)Common.ReturnCode.Success;
@@ -36,7 +39,7 @@ namespace MyGameServer.Handler
                 //添加进入数组
                 GameModel.Instance.MatchingList.Add(peer);
                 //1V1匹配判断队列长度是否满足
-                if (GameModel.Instance.MatchingList.Count == 2)
+                if (GameModel.Instance.MatchingList.Count >= 2)
                 {
                     EventData ed1;
                     EventData ed2;
@@ -47,6 +50,18 @@ namespace MyGameServer.Handler
 
                     //推送一个Event 推送两个事件，针对每一个人推送
                     GameModel.Instance.MatchingList[0].playerIndex = 1;
+
+                    BattleRoom room = new BattleRoom();
+                    room.first = GameModel.Instance.MatchingList[0];
+                    room.second = GameModel.Instance.MatchingList[1];
+                    GameModel.Instance.RoomList.Add(room);
+                    MyGameServer.log.Info("添加room："+room.first+" "+room.second);
+
+                    foreach (var RoomItem in GameModel.Instance.RoomList)
+                    {
+                        MyGameServer.log.Info(RoomItem.first);
+                        MyGameServer.log.Info(RoomItem.second);
+                    }
 
                     ed1 = new EventData((byte)operationRequest.OperationCode);
                     data = new Dictionary<byte, object>();
@@ -65,9 +80,7 @@ namespace MyGameServer.Handler
                     data.Add((byte)ParaCode.Matching_confirm, GameModel.Instance.MatchingList[1].playerIndex);
                     ed2.Parameters = data;
                     GameModel.Instance.MatchingList[1].SendEvent(ed2, new SendParameters());
-
-
-                    //匹配完成后，清空list；
+                    //匹配完成后，删除已完成匹配的两个客户端；
                     GameModel.Instance.MatchingList = new List<ClientPeer>();
                 }
                 else

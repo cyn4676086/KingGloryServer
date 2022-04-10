@@ -86,6 +86,7 @@
     <Compile Include="Handler\MatchingHandler.cs" />
     <Compile Include="Handler\SigninHandler.cs" />
     <Compile Include="Manager\UserManager.cs" />
+    <Compile Include="Model\BattleRoom.cs" />
     <Compile Include="Model\GameModel.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="MyGameServer.cs" />

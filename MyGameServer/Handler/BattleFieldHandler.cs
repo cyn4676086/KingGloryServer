@@ -33,8 +33,7 @@ namespace MyGameServer.Handler
                 response.Parameters = data2;
                 peer.SendOperationResponse(response, sendParameters);
 
-
-                //广播到所有的客户端，有新玩家加入
+               
                 //获取所有玩家的序列号，保存为一条字符串
                 var allplayer = "";
                 foreach (var peerItem in GameModel.Instance.PeerList)
@@ -51,9 +50,13 @@ namespace MyGameServer.Handler
                 ed.Parameters = data3;
 
 
-                foreach (var peerItem in GameModel.Instance.PeerList)
+                foreach (var RoomItem in GameModel.Instance.RoomList)
                 {
-                    peerItem.SendEvent(ed, new SendParameters());
+                    if (RoomItem.first == peer || RoomItem.second == peer)
+                    {
+                        RoomItem.first.SendEvent(ed, new SendParameters());
+                        RoomItem.second.SendEvent(ed, new SendParameters());
+                    }
                 }
 
             }
@@ -61,16 +64,19 @@ namespace MyGameServer.Handler
             {
                 string p = (string)DicTool.GetValue<byte, object>(operationRequest.Parameters, (byte)ParaCode.BF_Move);
                 //转发给所有客户端
-
                 EventData ed = new EventData((byte)operationRequest.OperationCode);
                 var data3 = new Dictionary<byte, object>();
                 //注意，这里2个参数
                 data3.Add((byte)ParaCode.ParaType, ParaCode.BF_Move);
                 data3.Add((byte)ParaCode.BF_Move, p);
                 ed.Parameters = data3;
-                foreach (var peerItem in GameModel.Instance.PeerList)
+                foreach (var RoomItem in GameModel.Instance.RoomList)
                 {
-                    peerItem.SendEvent(ed, new SendParameters());
+                    if (RoomItem.first == peer || RoomItem.second == peer)
+                    {
+                        RoomItem.first.SendEvent(ed, new SendParameters());
+                        RoomItem.second.SendEvent(ed, new SendParameters());
+                    }
                 }
             }
             else if (code == ParaCode.BF_Att)
@@ -84,9 +90,13 @@ namespace MyGameServer.Handler
                 data3.Add((byte)ParaCode.ParaType, ParaCode.BF_Att);
                 data3.Add((byte)ParaCode.BF_Att, p);
                 ed.Parameters = data3;
-                foreach (var peerItem in GameModel.Instance.PeerList)
+                foreach (var RoomItem in GameModel.Instance.RoomList)
                 {
-                    peerItem.SendEvent(ed, new SendParameters());
+                    if (RoomItem.first == peer || RoomItem.second == peer)
+                    {
+                        RoomItem.first.SendEvent(ed, new SendParameters());
+                        RoomItem.second.SendEvent(ed, new SendParameters());
+                    }
                 }
             }
             else if (code == ParaCode.BF_Hurt)
@@ -100,9 +110,13 @@ namespace MyGameServer.Handler
                 data3.Add((byte)ParaCode.ParaType, ParaCode.BF_Hurt);
                 data3.Add((byte)ParaCode.BF_Hurt, p);
                 ed.Parameters = data3;
-                foreach (var peerItem in GameModel.Instance.PeerList)
+                foreach (var RoomItem in GameModel.Instance.RoomList)
                 {
-                    peerItem.SendEvent(ed, new SendParameters());
+                    if (RoomItem.first == peer || RoomItem.second == peer)
+                    {
+                        RoomItem.first.SendEvent(ed, new SendParameters());
+                        RoomItem.second.SendEvent(ed, new SendParameters());
+                    }
                 }
             }
             else if (code == ParaCode.BF_Destory)
@@ -116,26 +130,34 @@ namespace MyGameServer.Handler
                 data3.Add((byte)ParaCode.ParaType, ParaCode.BF_Destory);
                 data3.Add((byte)ParaCode.BF_Destory, p);
                 ed.Parameters = data3;
-                foreach (var peerItem in GameModel.Instance.PeerList)
+                foreach (var RoomItem in GameModel.Instance.RoomList)
                 {
-                    peerItem.SendEvent(ed, new SendParameters());
+                    if (RoomItem.first == peer || RoomItem.second == peer)
+                    {
+                        RoomItem.first.SendEvent(ed, new SendParameters());
+                        RoomItem.second.SendEvent(ed, new SendParameters());
+                    }
                 }
             }
             else if (code == ParaCode.BF_Ending)
             {
                 //参数是失败的人
                 int index = (int)DicTool.GetValue<byte, object>(operationRequest.Parameters, (byte)ParaCode.BF_Ending);
-                //转发给所有客户端
-
+                //转发给房间内客户端
                 EventData ed = new EventData((byte)operationRequest.OperationCode);
                 var data3 = new Dictionary<byte, object>();
                 //注意，这里2个参数
                 data3.Add((byte)ParaCode.ParaType, ParaCode.BF_Ending);
                 data3.Add((byte)ParaCode.BF_Ending, index);
                 ed.Parameters = data3;
-                foreach (var peerItem in GameModel.Instance.PeerList)
+                foreach (var RoomItem in GameModel.Instance.RoomList)
                 {
-                    peerItem.SendEvent(ed, new SendParameters());
+                    if (RoomItem.first == peer || RoomItem.second == peer)
+                    {
+                        RoomItem.first.SendEvent(ed, new SendParameters());
+                        RoomItem.second.SendEvent(ed, new SendParameters());
+                        GameModel.Instance.RoomList.Remove(RoomItem);
+                    }
                 }
             }
 
