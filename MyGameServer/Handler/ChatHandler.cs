@@ -21,10 +21,10 @@ namespace MyGameServer.Handler
             //发送给其他客户端
             EventData ed = new EventData((byte)OperationCode.Chat);
             var data = new Dictionary<byte, object>();
-            data.Add((byte)ParaCode.Chat, Hello);
+            data.Add((byte)ParaCode.Chat,Hello);
             ed.Parameters = data;
            
-            //遍历发送
+            //遍历发送到所有客户端
             foreach(var peerItem in GameModel.Instance.PeerList)
             {
                 peerItem.SendEvent(ed, new SendParameters());

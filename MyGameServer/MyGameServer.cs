@@ -17,7 +17,9 @@ namespace MyGameServer
     //所有server都要继承实现三个基本方法
     public class MyGameServer : ApplicationBase
     {
+#pragma warning disable CS0108 // “MyGameServer.Instance”隐藏继承的成员“ApplicationBase.Instance”。如果是有意隐藏，请使用关键字 new。
         public static MyGameServer Instance;
+#pragma warning restore CS0108 // “MyGameServer.Instance”隐藏继承的成员“ApplicationBase.Instance”。如果是有意隐藏，请使用关键字 new。
 
         public static readonly ILogger log = LogManager.GetCurrentClassLogger();
         

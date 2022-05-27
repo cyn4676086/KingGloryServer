@@ -7,11 +7,11 @@ namespace Common
 {
     public enum OperationCode : byte
     {
-        Login,Signin,Chat,Show,Move, BattleFiled, Matching,
+        Login,Signin,Chat,Show,Move,BattleFiled,Matching,
     }
     public enum ParaCode : byte
     {
-        UserName,Password,Chat,Show,Move,ParaType,BF_Join,BF_Move,BF_Att,BF_Hurt,
+        UserName,Password,Chat,Show,Move,ParaType,HeroType, BF_Join,BF_Move,BF_Att,BF_Hurt,
         Matching_Start,Matching_confirm,BF_Ending, BF_Destory,
     }
     public enum ReturnCode: short
@@ -22,6 +22,8 @@ namespace Common
     {
         Normal,
         Skill1,
+        Skill2,
+        Skill3,
     }
-
+   
 }

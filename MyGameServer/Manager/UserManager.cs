@@ -25,7 +25,6 @@ namespace  MyGameServer.Manager
                 }
             }
         }
-
         internal bool VerifyUser(string username, string password)
         {
             using (ISession session = NHibernateHelper.OpenSession())
@@ -38,7 +37,6 @@ namespace  MyGameServer.Manager
                 return true;
             }
         }
-
         public void update(Model.User user)
         {
             using (ISession session = NHibernateHelper.OpenSession())
@@ -74,7 +72,6 @@ namespace  MyGameServer.Manager
             }
            
         }
-
         public User GetUserByName(string name)
         {
             using (ISession session = NHibernateHelper.OpenSession())
